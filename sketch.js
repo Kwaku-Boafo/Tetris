@@ -10,7 +10,7 @@ function setup(){
 function draw(){
     board();
     //OShape();
-    LShape();
+    //LShape();
     //JShape();
     //IShape();
     //TShape();
@@ -83,7 +83,7 @@ function LShape(){
 
 function keyPressed(){
     if(keyCode == DOWN_ARROW){
-        if((userShape == "O"  || userShape == "T") && y < 540){
+        if((userShape == "O"  || userShape == "T" || userShape == "S" || userShape == "Z") && y < 540){
             y +=30;
         }
         if((userShape == "L" || userShape == "J") && y < 510){
@@ -100,7 +100,7 @@ function keyPressed(){
         if(userShape == "I" && x < 270){
             x +=30;      
         }
-        if(userShape == "T" && x < 210){
+        if((userShape == "T" || userShape == "Z" || userShape == "S")&& x < 210){
             x +=30;     
             console.log(x); 
         }
