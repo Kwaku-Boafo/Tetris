@@ -10,12 +10,12 @@ function setup(){
 function draw(){
     board();
     //OShape();
-    //LShape();
+    LShape();
     //JShape();
     //IShape();
     //TShape();
     //SShape();
-    ZShape();
+    //ZShape();
     console.log(userShape);
 }
 
@@ -94,7 +94,7 @@ function keyPressed(){
         }
     }
     if(keyCode == RIGHT_ARROW){
-        if((userShape == "O" || userShape == "J") && x < 240){
+        if((userShape == "O" || userShape == "J" || userShape == "L") && x < 240){
             x +=30;     
         }
         if(userShape == "I" && x < 270){
@@ -110,8 +110,10 @@ function keyPressed(){
             x -=30;
         }
     }
+}
 
-    
+function randomShape(){
+    let randomIndex = random(shapes.length);
 }
 
 function board(){
