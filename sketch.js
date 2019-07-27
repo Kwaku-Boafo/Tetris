@@ -1,4 +1,5 @@
 let shapes = ["J", "L" , "O" , "I" , "S", "Z" , "T"];
+let boardSpots = [ , ];
 let userShape = "";
 let x = 0;
 let y = 0;
