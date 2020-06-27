@@ -14,12 +14,12 @@ const GAMEOVER_STATE = "Game Over";
 
 // Different Pieces in the game 
 let l = new L_Piece(shift , x , y, 270 , 510);
-let o = new O_Piece(shift , x , y, 230 , 540);
+let o = new O_Piece(shift , x , y, 260 , 540);
 let i = new I_Piece(shift , x , y, 300 , 480);
 let j = new J_Piece(shift , x , y, 270 , 510);
-let s = new S_Piece(shift , x , y, 210 , 540);
+let s = new S_Piece(shift , x , y, 230 , 540);
 let t = new T_Piece(shift , x , y, 240 , 540);
-let z = new Z_Piece(shift , x , y, 270 , 540);
+let z = new Z_Piece(shift , x , y, 240 , 540);
 
 //Arrays and Randomizer needed to randomly generate pieces and save their position
 let shapes = [j, l , o , i , s, z , t];
