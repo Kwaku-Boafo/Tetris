@@ -1,30 +1,41 @@
 const BOARD_WIDTH = 300;
 const BOARD_HEIGHT = 600
 const CANVAS_WIDTH = 500;
+const shift = 30;
+let x = 0;
+let y = 0;
+
+// Game States for various menus and screens
 const MAIN_MENU = "Main Menu";
 const PLAY_STATE = "Play";
 const PAUSE_STATE = "Pause";
 const LEADERBOARD_STATE = "Leaderboard";
-const GAMEOVER_STATE = "GAME OVER";
-let shift = 30;
-let x = 0;
-let y = 0;
-let shapes = ["J", "L" , "O" , "I" , "S", "Z" , "T"];
+const GAMEOVER_STATE = "Game Over";
+
+// Different Pieces in the game 
+let l = new L_Piece(shift , x , y, 270 , 510);
+let o = new O_Piece(shift , x , y, 230 , 540);
+let i = new I_Piece(shift , x , y, 300 , 480);
+let j = new J_Piece(shift , x , y, 270 , 510);
+let s = new S_Piece(shift , x , y, 210 , 540);
+let t = new T_Piece(shift , x , y, 240 , 540);
+let z = new Z_Piece(shift , x , y, 270 , 540);
+
+//Arrays and Randomizer needed to randomly generate pieces and save their position
+let shapes = [j, l , o , i , s, z , t];
 let boardSpots = [];
 let userShape = "";
 let randomShape = Math.floor(Math.random() * 7);
+let player = new Player(shapes[randomShape], " ", 0);
 
-
+// Sets up the canvas so the various UI elements can be visable
 function setup(){
     createCanvas(CANVAS_WIDTH, BOARD_HEIGHT);  
 }
 
-let o = new O_Piece(shift , x , y, 260 , 540);
-
-
+//Controls the various game states and switches the screens 
 function draw(){
     let gameStateManager = new GameStateManager(PLAY_STATE);
-
     if(gameStateManager.getState() == MAIN_MENU){
         gameStateManager.mainMenuState();
     }
@@ -41,47 +52,11 @@ function draw(){
         gameStateManager.gameOverState();
     }
     
-    
-    //o.defaultFall();
-    o.drawPiece();
-    o.keyPressed();
-    
-    
 }
+    
+shapes[randomShape].defaultFall();
+//player.keyPressed();
 
 
-// function keyPressed(){
-//     if(keyCode == DOWN_ARROW){
-//         if(( (userShape == "O" && OControll == true)  || (userShape == "T" && TControll == true) || (userShape == "S" && SControll == true) || (userShape == "Z" && OControll == true)) && y < 540){
-//             y +=30;
-//         }
-//         if(( (userShape == "L" && LControll == true) || (userShape == "J" && JControll == true)) && y < 510){
-//             y +=30;
-//         }
-//         if( (userShape == "I" && IControll == true) && y < 480){
-//             y +=30;     
-//         }
-//     }
-//     if(keyCode == RIGHT_ARROW){
-//         if((userShape == "O" || userShape == "J" || userShape == "L") && x < 240){
-//             x +=30;     
-//         }
-//         if(userShape == "I" && x < 270){
-//             x +=30;      
-//         }
-//         if((userShape == "T" || userShape == "Z" || userShape == "S")&& x < 210){
-//             x +=30;     
-//             console.log(x); 
-//         }
-//     }
-//     if(keyCode == LEFT_ARROW){
-//         if(userShape == "O","L", "I", "J", "S", "Z" , "T" && x > 0){
-//             x -=30;
-//         }
-//     }
 
-//     if(keyCode == ENTER){
-//         randomShape = Math.floor(Math.random() * 7);
-//     }
-// }
 

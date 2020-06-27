@@ -23,6 +23,8 @@ class GameStateManager{
         board.createBoard();
         board.drawBoard();
         board.drawHoldBox();
+        shapes[randomShape].drawPiece();
+        shapes[randomShape].keyPressed();
     }
 
 

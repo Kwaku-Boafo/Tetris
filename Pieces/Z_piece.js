@@ -5,9 +5,9 @@ class Z_Piece extends Piece {
 
     drawPiece(){
         fill("green");
-        rect(x, y, movementSpaces, movementSpaces);
-        rect(x + movementSpaces, y, movementSpaces, movementSpaces);
-        rect(x + movementSpaces, y + movementSpaces, movementSpaces, movementSpaces);
-        rect(x + (2 * movementSpaces), y + movementSpaces, movementSpaces, movementSpaces);
+        rect(x, y, this.movementSpaces, this.movementSpaces);
+        rect(x + this.movementSpaces, y, this.movementSpaces, this.movementSpaces);
+        rect(x + this.movementSpaces, y + this.movementSpaces, this.movementSpaces, this.movementSpaces);
+        rect(x + (2 * this.movementSpaces), y + this.movementSpaces, this.movementSpaces, this.movementSpaces);
     }
 }

@@ -5,11 +5,12 @@ class Board {
     holdBox_width= 100;
     holdBox_height = 100;
 
-    constructor(size, pieceShift, boardWidth, boardHeight){
+    constructor(size, pieceShift, boardWidth, boardHeight, player){
         this.size = size;
         this.pieceShift = pieceShift;
         this.boardWidth = boardWidth;
         this.boardHeight = boardHeight;
+        this.player = player;
     }
 
     //creates an array that is the length of the board display
@@ -35,11 +36,15 @@ class Board {
 
     // This method will change the piece in the holdBox each time a player holds a piece 
     updateHoldBox(){
-        
+        let heldPiece = this.player.getHeldPiece();
     }
 
     //This will update the array so that we can track what spots are taken 
     updateBoardSpots(){
 
     }
+
+    checkBoard(){
+        
+    } 
 }
